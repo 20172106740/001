@@ -9,39 +9,39 @@ class CFeet
 private:
 	int feet;
 	int inch;
-private:
+public:
 	void setvalue(int x, int i);
 	void display();
-	CFeet ccd(CFeet & objf);
-	CFeet operator+(CFeet & opjf);
+	CFeet add(CFeet & obj);
+	CFeet operator+(CFeet & obj);
 };
 void CFeet::setvalue(int x, int i)
 {
 	feet = x + i / 12;
-	inch = x % 12;
+	inch = i % 12;
 }
 void CFeet::display()
 {
-	cout << feet << "feet" << inch << "inch" << endl;
+	cout << feet << "Ó¢³ß" << inch << "Ó¢´ç" << endl;
 }
-CFeet CFeet::ccd(CFeet&opjf)
+CFeet CFeet::add(CFeet&obj)
 {
 	CFeet temp;
-	temp.setvalue(feet + opjf.feet, inch + opjf.inch);
+	temp.setvalue(feet + obj.feet, inch + obj.inch);
 	return temp;
 }
-CFeet CFeet::operator+(CFeet&opjf)
+CFeet CFeet::operator+(CFeet&obj)
 {
 	CFeet temp;
-	temp.setvalue(feet + opjf.feet, inch + opjf.inch);
+	temp.setvalue(feet + obj.feet, inch + obj.inch);
 	return temp;
 }
 int main()
 {
-	CFeet A, B, C;
-	A.setvalue(11,7);
-	B.setvalue(5.9);
-	C = A + B;
-	C.display();
+	CFeet a, b, c;
+	a.setvalue(7, 9);
+	b.setvalue(1, 1);
+	c = a + b;
+	c.display();
 	return 0;
 }
